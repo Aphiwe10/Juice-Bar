@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juice Bar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the Juice Bar</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#">More</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+
+              <li><a href="save-for-later.html">Save for Later</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Our Juices</h2>
+        <div class="juice-gallery">
+          <div class="juice-item">
+            <img src="images/mango.jpg" alt="Mango Juice" />
+            <button class="save-btn" data-item="Mango Juice">
+              Save for later
+            </button>
+            <button class="like-btn" data-item="Mango Juice">Like</button>
+          </div>
+          <div class="juice-item">
+            <img src="images/orange.jpg" alt="Orange Juice" />
+            <button class="save-btn" data-item="Orange Juice">
+              Save for later
+            </button>
+            <button class="like-btn" data-item="Orange Juice">Like</button>
+          </div>
+          <div class="juice-item">
+            <img src="images/pineapple.jpg" alt="Pineapple Juice" />
+            <button class="save-btn" data-item="Pineapple Juice">
+              Save for later
+            </button>
+            <button class="like-btn" data-item="Pineapple Juice">Like</button>
+          </div>
+          <div class="juice-item">
+            <img src="images/apple.jpeg" alt="Apple Juice" />
+            <button class="save-btn" data-item="Apple Juice">
+              Save for later
+            </button>
+            <button class="like-btn" data-item="Apple Juice">Like</button>
+          </div>
+          <div class="juice-item">
+            <img src="images/grape.jpg" alt="Grape Juice" />
+            <button class="save-btn" data-item="Grape Juice">
+              Save for later
+            </button>
+            <button class="like-btn" data-item="Grape Juice">Like</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Juice Bar. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
