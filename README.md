@@ -8,6 +8,9 @@ Welcome to the Juice Bar website repository. This project is a simple, static we
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [File Structure](#file-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
 
 ## Introduction
 
@@ -49,3 +52,18 @@ juice-bar-website/
 ├── contact.html
 ├── save-for-later.html
 ├── README.md
+
+## Installation
+
+To install and run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Aphiwe10/Juice-Bar.git
+
+## Usage
+After cloning the repository and navigating to the project directory, you can view the website by opening the index.html file in a web browser.
+
+## Credits
+Aphiwe Maqebhula - Project Author
+Expert Code Reviewer HyperionDev - Code Reviewer
