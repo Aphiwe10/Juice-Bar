@@ -12,7 +12,7 @@ body {
 
 header {
   background-color: #333;
-  color: #fff;
+  color: #FF6347; /* Tomato color */ 
   padding: 10px;
   text-align: center;
 }
