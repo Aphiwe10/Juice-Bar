@@ -1,31 +1,43 @@
 $(document).ready(function () {
-  // Initialize saved items
-  let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+  // Initialize user saved items from localStorage or set to an empty array if not found
+  let userSavedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
 
-  // Function to update the saved items list
+  // Function to update the display of saved items on the "Save for Later" page
   function updateSavedItems() {
-    $("#saved-items").empty();
-    if (savedItems.length === 0) {
-      $("#saved-items").append("<p>No items saved yet.</p>");
+    // Clear the current list of saved items
+    $("#saved-items-list").empty();
+
+    // Check if there are any saved items
+    if (userSavedItems.length === 0) {
+      // Display a message if no items are saved
+      $("#saved-items-list").append("<p>No items saved yet.</p>");
     } else {
-      savedItems.forEach((item) => {
-        $("#saved-items").append(`<p>${item}</p>`);
+      // Iterate over each saved item and add it to the list
+      userSavedItems.forEach((savedItem) => {
+        $("#saved-items-list").append(`<li>${savedItem}</li>`);
       });
     }
   }
 
-  // Display saved items on page load
+  // Display saved items when the page loads
   updateSavedItems();
 
-  // Save item for later
+  // Handle click event on the "Save for Later" button
   $(".save-btn").click(function () {
-    const item = $(this).data("item");
-    if (!savedItems.includes(item)) {
-      savedItems.push(item);
-      localStorage.setItem("savedItems", JSON.stringify(savedItems));
-      alert(`You have ${savedItems.length} items in your "Save for Later" folder.`);
+    const savedItem = $(this).data("item");
+
+    // Check if the item is already saved
+    if (!userSavedItems.includes(savedItem)) {
+      // Add the new item to the saved items array
+      userSavedItems.push(savedItem);
+      // Save the updated array to localStorage
+      localStorage.setItem("savedItems", JSON.stringify(userSavedItems));
+      // Alert the user with the number of saved items
+      alert(`You have ${userSavedItems.length} items in your "Save for Later" folder.`);
+      // Update the display of saved items
       updateSavedItems();
     } else {
+      // Alert the user if the item is already saved
       alert("Item already saved.");
     }
   });
