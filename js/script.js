@@ -89,18 +89,26 @@ $(document).ready(function () {
   });
 
   // Function to update the saved items list
-  let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+ // Retrieve saved items from localStorage or initialize an empty array if no items are found
+let userSavedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
 
-  function updateSavedItems() {
-    $("#saved-items").empty();
-    if (savedItems.length === 0) {
-      $("#saved-items").append("<p>No items saved yet.</p>");
-    } else {
-      savedItems.forEach((item) => {
-        $("#saved-items").append(`<p>${item}</p>`);
-      });
-    }
+// Function to update the saved items list displayed on the page
+function updateSavedItems() {
+  // Clear the current content of the saved-items container
+  $("#saved-items").empty();
+  
+  // Check if the userSavedItems array is empty
+  if (userSavedItems.length === 0) {
+    // If no items are saved, display a message
+    $("#saved-items").append("<p>No items saved yet.</p>");
+  } else {
+    // If there are saved items, display each item inside a <p> element
+    userSavedItems.forEach((savedItem) => {
+      $("#saved-items").append(`<p>${savedItem}</p>`);
+    });
   }
+}
+
 
   // Update saved items on page load
   updateSavedItems();
