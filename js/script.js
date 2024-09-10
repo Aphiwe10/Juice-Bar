@@ -88,23 +88,23 @@ $(document).ready(function () {
     $(this).next(".dropdown-menu").slideToggle(); // Toggles the visibility of the dropdown menu
   });
 
-  // Function to update the saved items list
- // Retrieve saved items from localStorage or initialize an empty array if no items are found
-let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+ // Function to update the saved items list
+// Retrieve saved items from localStorage or initialize an empty array if no items are found
+let userSavedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
 
 // Function to update the saved items list displayed on the page
 function updateSavedItems() {
   // Clear the current content of the saved-items container
   $("#saved-items").empty();
   
-  // Check if the savedItems array is empty
-  if (savedItems.length === 0) {
+  // Check if the userSavedItems array is empty
+  if (userSavedItems.length === 0) {
     // If no items are saved, display a message
     $("#saved-items").append("<p>No items saved yet.</p>");
   } else {
     // If there are saved items, display each item inside a <p> element
-    savedItems.forEach((item) => {
-      $("#saved-items").append(`<p>${item}</p>`);
+    userSavedItems.forEach((savedItem) => {
+      $("#saved-items").append(`<p>${savedItem}</p>`);
     });
   }
 }
