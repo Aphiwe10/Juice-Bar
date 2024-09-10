@@ -88,8 +88,8 @@ $(document).ready(function () {
     $(this).next(".dropdown-menu").slideToggle(); // Toggles the visibility of the dropdown menu
   });
 
-  // Function to update the saved items list
- // Retrieve saved items from localStorage or initialize an empty array if no items are found
+ // Function to update the saved items list
+// Retrieve saved items from localStorage or initialize an empty array if no items are found
 let userSavedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
 
 // Function to update the saved items list displayed on the page
